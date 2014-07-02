@@ -30,40 +30,72 @@ import org.apache.commons.logging.LogFactory;
  * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
  * @version 3.0, July 2, 2014
  */
-public class ResourcesTexts {
+public final class ResourcesTexts {
 
+  /** The logger. */
   private final Log logger;
 
+  /** The class that will provide the base name. */
   private final Class<?> clazz;
+
+  /** The fallback to be used when a resource is not found. */
   private final ResourcesTexts fallback;
 
+  /** The resource bundle with the locale specific texts. */
   private final ResourceBundle resourceBundle;
 
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   */
   public ResourcesTexts(final Class<?> clazz) {
     this(clazz, null);
   }
 
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class. If a resource is not found, the fallback will be used
+   * before returning.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   * @param fallback
+   *          the {@link ResourcesTexts} to be used in case a resource is not
+   *          found in this one
+   */
   public ResourcesTexts(final Class<?> clazz, final ResourcesTexts fallback) {
 
     logger = LogFactory.getLog(clazz);
 
-    ResourceBundle resourceBundle;
+    ResourceBundle resourceBundleTmp;
 
     try {
-      resourceBundle = ResourceBundle.getBundle(clazz.getPackage().getName() + ".texts");
+      resourceBundleTmp = ResourceBundle.getBundle(clazz.getPackage().getName() + ".texts");
     }
 
     catch (Exception e) {
-      resourceBundle = null;
+      resourceBundleTmp = null;
       logger.error("no texts for class: " + clazz.getName() + ", getText(key) will return the key", e);
     }
 
     this.clazz = clazz;
     this.fallback = fallback;
 
-    this.resourceBundle = resourceBundle;
+    this.resourceBundle = resourceBundleTmp;
   }
 
+  /**
+   * Gets the text ({@link String}) for the given key. If the text was not
+   * found, the fallback (if it was provided) will be used.
+   * 
+   * @param key
+   *          the key for the desired text
+   * 
+   * @return the text for the given key, or the key if the text was not found
+   */
   public String getText(final String key) {
 
     String text;
