@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<parent>
+		<groupId>net.sulea.cristian</groupId>
+		<artifactId>projects</artifactId>
+		<relativePath>../../../../projects/Git Repositories/projects/projects/pom.xml</relativePath>
+		<version>1</version>
+	</parent>
+
+
+	<groupId>jatoo</groupId>
+	<artifactId>jatoo-resources</artifactId>
+	<version>4.0-SNAPSHOT</version>
+
+
+	<name>JaToo Resources</name>
+	<description>A Java Open Source library created to ease the work with various resources (like locale specific texts, images, icons, etc).</description>
+	<url>http://cristian.sulea.net/projects/jatoo-resources/</url>
+
+	<inceptionYear>2011</inceptionYear>
+
+
+	<distributionManagement>
+		<site>
+			<id>${distribution.site.id}</id>
+			<url>${distribution.site.url}/${project.artifactId}</url>
+		</site>
+	</distributionManagement>
+
+
+	<developers>
+		<developer>
+			<id>cristian.sulea</id>
+			<name>Cristian Sulea</name>
+			<email>cristian.sulea.79@gmail.com</email>
+			<url>http://cristian.sulea.net</url>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+3</timezone>
+		</developer>
+	</developers>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.wvengen</groupId>
+				<artifactId>proguard-maven-plugin</artifactId>
+				<configuration>
+					<options>
+						<option>-keep public class * { public protected *; }</option>
+					</options>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
