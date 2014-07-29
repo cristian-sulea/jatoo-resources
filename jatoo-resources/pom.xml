@@ -11,12 +11,14 @@
 
 
 	<artifactId>jatoo-resources</artifactId>
-	<version>4.0-SNAPSHOT</version>
+	<version>4.0</version>
 
 
 	<name>JaToo Resources</name>
-	<description>A Java Open Source library created to ease the work with various resources (like locale specific texts, images, icons, etc).</description>
-	<url>http://cristian.sulea.net/projects/jatoo-resources/</url>
+	<description>A free open source Java library created to ease the work with various resources (like locale specific texts, images, icons, etc).</description>
+	<!-- <url>http://cristian.sulea.net/projects/jatoo-resources/</url> -->
+	<!-- <url>http://jatoo-resources.sourceforge.net</url> -->
+	<url>http://cristian-sulea.github.io/jatoo-resources/</url>
 
 	<inceptionYear>2014</inceptionYear>
 
@@ -46,6 +48,7 @@
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>com.github.wvengen</groupId>
 				<artifactId>proguard-maven-plugin</artifactId>
@@ -55,6 +58,19 @@
 					</options>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<appendAssemblyId>true</appendAssemblyId>
+					<descriptors>
+						<descriptor>src/assembly/dist-bin.xml</descriptor>
+						<descriptor>src/assembly/dist-src.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
