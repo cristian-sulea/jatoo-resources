@@ -31,7 +31,7 @@ ImageIcon icon = images.getImageIcon("icon-ok.png");
 	Please check {{{./tutorial.html}the tutorial}} for more and detailed examples.
 
 
-* Download ( Version ${project.version}, July 30, 2014 )
+* Download ( Version ${project.version}, July 29, 2014 )
 	
 	Binaries
 		
