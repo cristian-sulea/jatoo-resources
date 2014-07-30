@@ -1,0 +1,113 @@
+	-----
+	A free open source Java library created to ease the work with various resources (like locale specific texts, images, icons, etc).
+	-----
+	Cristian Sulea
+	-----
+	2014-07-30
+	-----
+
+
+JaToo Resources
+	
+	A free open source Java library created to ease the work with various resources (like locale specific texts, images, icons, etc).
+
+
+* Usage
+
++---+
+ResourcesTexts texts = new ResourcesTexts(getClass());
+
+System.out.println(texts.getText("title"));
+System.out.println(texts.getText("description"));
++---+
+
++---+
+ResourcesImages images = new ResourcesImages(getClass());
+
+Image background = images.getImage("background.png");
+ImageIcon icon = images.getImageIcon("icon-ok.png");
++---+
+	
+	Please check {{{./tutorial.html}the tutorial}} for more and detailed examples.
+
+
+* Download ( Version ${project.version}, July 30, 2014 )
+	
+	Binaries
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-bin.zip/download}${project.artifactId}-${project.version}-bin.zip}}
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-bin.tar.gz/download}${project.artifactId}-${project.version}-bin.tar.gz}}
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-bin.tar.bz2/download}${project.artifactId}-${project.version}-bin.tar.bz2}}
+		
+		[]
+	
+	Sources
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-src.zip/download}${project.artifactId}-${project.version}-src.zip}}
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-src.tar.gz/download}${project.artifactId}-${project.version}-src.tar.gz}}
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/${project.version}/${project.artifactId}-${project.version}-src.tar.bz2/download}${project.artifactId}-${project.version}-src.tar.bz2}}
+		
+		[]
+	
+	Other releases can be obtained from the project section files on SourceForge.net
+		
+		* {{{http://sourceforge.net/projects/${project.artifactId}/files/}Browse All Files on SourceForge}}
+		
+		[]
+
+
+* Contact
+	
+ 	* For general information visit one of the project home pages:
+ 		
+ 		* {{{http://${project.artifactId}.sourceforge.net}http://${project.artifactId}.sourceforge.net}}
+ 		
+ 		* {{{http://cristian-sulea.github.io/${project.artifactId}/}http://cristian-sulea.github.io/${project.artifactId}/}}
+ 		
+ 		[]
+ 	
+ 	[]
+	
+ 	* For development information visit the summary page:
+ 		
+ 		* {{{http://sourceforge.net/projects/${project.artifactId}/}http://sourceforge.net/projects/${project.artifactId}/}}
+ 		
+ 		[]
+ 	
+ 	[]
+	
+	* To contact project administrator visit:
+		
+		* {{{http://cristian.sulea.net}http://cristian.sulea.net}}
+		
+		* {{{http://sourceforge.net/users/cristian-sulea/}http://sourceforge.net/users/cristian-sulea/}}
+		
+		* {{{https://github.com/cristian-sulea}https://github.com/cristian-sulea}}		
+		
+		[]
+	
+	[]
+
+
+* Licensing
+	
+	Copyright (C) Cristian Sulea ( {{{http://cristian.sulea.net}http://cristian.sulea.net}} )
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+	
+	You should have received a copy of the GNU Lesser General Public License
+	along with this program.  If not, see {{{http://www.gnu.org/licenses/}http://www.gnu.org/licenses/}}.
+
+
