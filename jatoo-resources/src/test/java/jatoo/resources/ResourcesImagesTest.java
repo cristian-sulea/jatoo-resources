@@ -1,5 +1,6 @@
 package jatoo.resources;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ResourcesImagesTest {
@@ -9,8 +10,8 @@ public class ResourcesImagesTest {
 
     ResourcesImages images = new ResourcesImages(getClass());
 
-    System.out.println(images.getImage("background.png"));
-    System.out.println(images.getImageIcon("icon-ok.png"));
+    Assert.assertNotNull(images.getImage("image.png"));
+    Assert.assertNull(images.getImage("image2.png"));
   }
 
 }
