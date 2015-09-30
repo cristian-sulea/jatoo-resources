@@ -7,7 +7,7 @@
 		<groupId>net.sulea.cristian</groupId>
 		<artifactId>jatoo</artifactId>
 		<relativePath>../../jatoo/jatoo/pom.xml</relativePath>
-		<version>2.3-SNAPSHOT</version>
+		<version>2.3</version>
 	</parent>
 
 	<artifactId>jatoo-resources</artifactId>
