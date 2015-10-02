@@ -1,6 +1,33 @@
+
+
 # JaToo Resources
 
-A free open source Java library created to ease the work with various resources (like locale specific texts, images, icons, etc).
+A Java™ Open Source library created to ease the work with various resources (like locale specific texts, images, icons, etc).
+
+**GitHub**
+
+* [Code](https://github.com/cristian-sulea/jatoo-resources)
+* [Releases](https://github.com/cristian-sulea/jatoo-resources/releases)
+* [Issues](https://github.com/cristian-sulea/jatoo-resources/issues)
+* [Pull requests](https://github.com/cristian-sulea/jatoo-resources/pulls)
+
+**SourceForge.net**
+
+* [Summary](http://sourceforge.net/projects/jatoo-resources/)
+* [Files](http://sourceforge.net/projects/jatoo-resources/files/)
+* [Support](http://sourceforge.net/projects/jatoo-resources/support/)
+
+
+## Contact
+
+To contact project administrator visit personal web page:
+		
+* [http://cristian.sulea.net](http://cristian.sulea.net "Cristian Sulea")
+
+Or one of the profile pages:
+
+* [https://github.com/cristian-sulea](@ GitHub "Cristian Sulea")
+* [http://sourceforge.net/users/cristian-sulea/](@ SourceForge.net "Cristian Sulea")
 
 
 ## Licensing
@@ -18,4 +45,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+
