@@ -1,0 +1,2 @@
+language: java
+script: cd jatoo-resources && mvn clean install site -Dgpg.skip=true && ls -1 target
