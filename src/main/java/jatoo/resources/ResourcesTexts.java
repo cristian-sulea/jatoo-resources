@@ -17,6 +17,7 @@
 
 package jatoo.resources;
 
+import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -125,6 +126,23 @@ public final class ResourcesTexts {
     }
 
     return text;
+  }
+
+  /**
+   * Format the given arguments using the text for the given key. See
+   * {@link #getText(String)} for more details.
+   * 
+   * @param key
+   *          the key for the desired text
+   * @param arguments
+   *          object(s) to format
+   * 
+   * @return the formatted text
+   * 
+   * @see #getText(String)
+   */
+  public String getText(final String key, final Object... arguments) {
+    return MessageFormat.format(getText(key), arguments);
   }
 
 }
