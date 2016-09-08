@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+
+	<bannerLeft>
+		<src>images/logo.png</src>
+		<alt>${project.name}</alt>
+		<href>index.html</href>
+	</bannerLeft>
+
+	<body>
+
+		<menu name="Main">
+			<item name="Overview" href="index.html" />
+			<item name="Tutorial" href="tutorial.html" />
+		</menu>
+
+		<menu name="Support">
+			<item name="Bugs" href="http://sourceforge.net/p/${project.artifactId}/bugs/" />
+			<item name="Support Requests" href="http://sourceforge.net/p/${project.artifactId}/support-requests/" />
+			<item name="Feature Requests" href="http://sourceforge.net/p/${project.artifactId}/feature-requests/" />
+		</menu>
+
+		<menu name="Hosted on">
+			<item name="SourceForge" href="http://sourceforge.net/projects/${project.artifactId}/" />
+			<item name="GitHub" href="http://github.com/cristian-sulea/${project.artifactId}" />
+		</menu>
+
+	</body>
+
+</project>

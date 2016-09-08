@@ -1,0 +1,56 @@
+	-----
+	Tutorial
+	-----
+	Cristian Sulea
+	-----
+	2014-07-30
+	-----
+
+
+Tutorial
+
+
+* Basic texts usage
+	
+	The file "texts.properties" is in the same package with the "user" class.
+
++---+
+ResourcesTexts texts = new ResourcesTexts(getClass());
+
+System.out.println(texts.getText("key"));
++---+
+
+
+* Fallback texts for the case when a resource is not found
+	
+	If a text is not found, the fallback will be used before returning.
+
++---+
+ResourcesTexts texts = new ResourcesTexts(getClass(), new ResourcesTexts(SuperClass.class));
+
+System.out.println(texts.getText("key"));
++---+
+
+
+* Basic images usage
+	
+	The images are in the same package with the "user" class.
+
++---+
+ResourcesImages images = new ResourcesImages(getClass());
+
+Image background = images.getImage("background.png");
+ImageIcon icon = images.getImageIcon("icon-ok.png");
++---+
+
+
+* Fallback images for the case when a resource is not found
+	
+	If an image is not found, the fallback will be used before returning.
+
++---+
+ResourcesImages images = new ResourcesImages(getClass(), new ResourcesImages(SuperClass.class));
+
+Image background = images.getImage("background.png");
+ImageIcon icon = images.getImageIcon("icon-ok.png");
++---+
