@@ -29,7 +29,7 @@ import org.apache.commons.logging.LogFactory;
  * fallback (very useful for example when a project extends another project).
  * 
  * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
- * @version 1.0, July 2, 2014
+ * @version 1.1, October 10, 2016
  */
 public final class ResourcesImages {
 
@@ -50,7 +50,22 @@ public final class ResourcesImages {
    *          the class that will provide the base name
    */
   public ResourcesImages(final Class<?> clazz) {
-    this(clazz, null);
+    this(clazz, (ResourcesImages) null);
+  }
+
+  /**
+   * Creates a {@link ResourcesImages} object using as base name the package of
+   * the specified class. If a resource is not found, the fallback will be used
+   * before returning.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   * @param fallback
+   *          the class to be used to create the {@link ResourcesImages} to be
+   *          used in case a resource is not found in this one
+   */
+  public ResourcesImages(final Class<?> clazz, final Class<?> fallback) {
+    this(clazz, new ResourcesImages(fallback));
   }
 
   /**
