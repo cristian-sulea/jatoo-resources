@@ -18,6 +18,7 @@
 package jatoo.resources;
 
 import java.text.MessageFormat;
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -47,28 +48,42 @@ public final class ResourcesTexts {
 
   /**
    * Creates a {@link ResourcesTexts} object using as base name the package of
-   * the specified class.
-   * 
-   * @param clazz
-   *          the class that will provide the base name
-   */
-  public ResourcesTexts(final Class<?> clazz) {
-    this(clazz, (ResourcesTexts) null);
-  }
-
-  /**
-   * Creates a {@link ResourcesTexts} object using as base name the package of
    * the specified class. If a resource is not found, the fallback will be used
    * before returning.
    * 
    * @param clazz
    *          the class that will provide the base name
    * @param fallback
-   *          the class to be used to create the fallback {@link ResourcesTexts}
-   *          to be used in case a resource is not found in this one
+   *          the {@link ResourcesTexts} to be used in case a resource is not
+   *          found in this one
+   * @param language
+   *          the language for which texts are desired
    */
-  public ResourcesTexts(final Class<?> clazz, final Class<?> fallback) {
-    this(clazz, new ResourcesTexts(fallback));
+  public ResourcesTexts(final Class<?> clazz, final ResourcesTexts fallback, final String language) {
+
+    logger = LogFactory.getLog(clazz);
+
+    ResourceBundle resourceBundleTmp;
+
+    try {
+      if (language == null) {
+        resourceBundleTmp = ResourceBundle.getBundle(clazz.getPackage().getName() + ".texts");
+      } else {
+        resourceBundleTmp = ResourceBundle.getBundle(clazz.getPackage().getName() + ".texts", new Locale(language));
+      }
+    }
+
+    catch (Exception e) {
+      resourceBundleTmp = null;
+      if (fallback == null) {
+        logger.error("no texts for class: " + clazz.getName() + ", getText(key) will return the key", e);
+      }
+    }
+
+    this.clazz = clazz;
+    this.fallback = fallback;
+
+    this.resourceBundle = resourceBundleTmp;
   }
 
   /**
@@ -83,26 +98,63 @@ public final class ResourcesTexts {
    *          found in this one
    */
   public ResourcesTexts(final Class<?> clazz, final ResourcesTexts fallback) {
+    this(clazz, fallback, null);
+  }
 
-    logger = LogFactory.getLog(clazz);
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class. If a resource is not found, the fallback will be used
+   * before returning.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   * @param fallback
+   *          the class to be used to create the fallback {@link ResourcesTexts}
+   *          to be used in case a resource is not found in this one
+   * @param language
+   *          the language for which texts are desired
+   */
+  public ResourcesTexts(final Class<?> clazz, final Class<?> fallback, String language) {
+    this(clazz, new ResourcesTexts(fallback), language);
+  }
 
-    ResourceBundle resourceBundleTmp;
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class. If a resource is not found, the fallback will be used
+   * before returning.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   * @param fallback
+   *          the class to be used to create the fallback {@link ResourcesTexts}
+   *          to be used in case a resource is not found in this one
+   */
+  public ResourcesTexts(final Class<?> clazz, final Class<?> fallback) {
+    this(clazz, new ResourcesTexts(fallback), null);
+  }
 
-    try {
-      resourceBundleTmp = ResourceBundle.getBundle(clazz.getPackage().getName() + ".texts");
-    }
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   * @param language
+   *          the language for which texts are desired
+   */
+  public ResourcesTexts(final Class<?> clazz, String language) {
+    this(clazz, (ResourcesTexts) null, language);
+  }
 
-    catch (Exception e) {
-      resourceBundleTmp = null;
-      if (fallback == null) {
-        logger.error("no texts for class: " + clazz.getName() + ", getText(key) will return the key", e);
-      }
-    }
-
-    this.clazz = clazz;
-    this.fallback = fallback;
-
-    this.resourceBundle = resourceBundleTmp;
+  /**
+   * Creates a {@link ResourcesTexts} object using as base name the package of
+   * the specified class.
+   * 
+   * @param clazz
+   *          the class that will provide the base name
+   */
+  public ResourcesTexts(final Class<?> clazz) {
+    this(clazz, (ResourcesTexts) null, null);
   }
 
   /**
