@@ -29,7 +29,7 @@ import org.apache.commons.logging.LogFactory;
  * fallback (very useful for example when a project extends another project).
  * 
  * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
- * @version 3.1, July 29, 2014
+ * @version 3.2, October 10, 2016
  */
 public final class ResourcesTexts {
 
@@ -79,7 +79,9 @@ public final class ResourcesTexts {
 
     catch (Exception e) {
       resourceBundleTmp = null;
-      logger.error("no texts for class: " + clazz.getName() + ", getText(key) will return the key", e);
+      if (fallback == null) {
+        logger.error("no texts for class: " + clazz.getName() + ", getText(key) will return the key", e);
+      }
     }
 
     this.clazz = clazz;
@@ -102,8 +104,12 @@ public final class ResourcesTexts {
     String text;
 
     if (resourceBundle == null) {
-      text = "#" + key;
-      logger.error("no texts for class: " + clazz.getName() + ", returning the key: #" + key);
+      if (fallback != null) {
+        text = fallback.getText(key);
+      } else {
+        text = "#" + key;
+        logger.error("no texts for class: " + clazz.getName() + ", returning the key: #" + key);
+      }
     }
 
     else {
