@@ -30,7 +30,7 @@ import org.apache.commons.logging.LogFactory;
  * fallback (very useful for example when a project extends another project).
  * 
  * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
- * @version 3.3, October 10, 2016
+ * @version 3.4, October 12, 2016
  */
 public final class ResourcesTexts {
 
@@ -115,7 +115,7 @@ public final class ResourcesTexts {
    *          the language for which texts are desired
    */
   public ResourcesTexts(final Class<?> clazz, final Class<?> fallback, String language) {
-    this(clazz, new ResourcesTexts(fallback), language);
+    this(clazz, new ResourcesTexts(fallback, language), language);
   }
 
   /**
